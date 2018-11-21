@@ -43,8 +43,8 @@ spring:
       cache: false
       charset: UTF-8
 mybatis:
-  mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.eddc.jnj.model
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.eddc.johnsonhenan.model
   configuration:
     call-setters-on-nulls: true
 

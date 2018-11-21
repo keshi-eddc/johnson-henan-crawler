@@ -1,0 +1,9 @@
+package com.eddc.johnsonhenan.service.Johnson_henan_RelationDistribution;
+
+import com.eddc.johnsonhenan.model.Johnson_henan_RelationDistribution_list;
+
+public interface Johnson_henan_RelationDistribution_service {
+
+    int addJohnson_henan_RelationDistribution_list(Johnson_henan_RelationDistribution_list johnson_henan_relationDistribution_list);
+
+}

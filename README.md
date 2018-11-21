@@ -7,9 +7,9 @@
 * maven:3.3.9
 * alibaba Druid 数据库连接池：1.1.9
 * HttpClient
-* mybatis
+* mybatis generator 自动生成代码插件 1.3.2
 
 ### 功能
 * 抓取数据
-
+* mybatis generator 自动生成代码
 
