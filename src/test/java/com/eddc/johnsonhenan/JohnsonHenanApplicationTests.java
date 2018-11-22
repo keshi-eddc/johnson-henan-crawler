@@ -1,7 +1,6 @@
 package com.eddc.johnsonhenan;
 
 import com.eddc.johnsonhenan.service.CrawlerService;
-import org.apache.commons.lang.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
@@ -82,9 +81,31 @@ public class JohnsonHenanApplicationTests {
 //                "&ctl00%24ContentPlaceHolder1%24AspNetPager1_pagesize=20";
 
         String content = crawlerService.getPostContent(url, headParams);
-        crawlerService.extraOnePageContent(content, "hs0157");
+        crawlerService.extraOnePageContent(content, "hs0014","no");
 
         System.out.println("url:" + url);
+
+    }
+
+    /*
+     * 抓取账号前，登录网页，获得cookie
+     * 注意cookie里，显示每页数量的参数，确保数据完整
+     * 9 = 每页显示数量 2018年11月19日
+     * 6 = 每页显示数量 2018年11月20日
+     * */
+    @Test
+    public void getDataWithAccount() {
+        String account = "hs0014";
+        String NET_SessionId = "qp41ppjawcrt4455lrdcca45";
+
+        //yes 才插入数据库
+        String isInsert = "no";
+        String url = "http://hc.hnggzyjy.cn/Enterprise/RelationQuery/RelationDistributionQuery.aspx?returnUrl=%2fEnterprise%2fRelationQuery%2fRelationQueryUnpack.aspx";
+        Map<String, String> headParams = new HashMap<>();
+        String cookieStr = "15=10; 6=1000; 9=1000; ASP.NET_SessionId=" + NET_SessionId;
+        headParams.put("Cookie", cookieStr);
+        String content = crawlerService.getPostContent(url, headParams);
+        crawlerService.extraOnePageContent(content, account, isInsert);
 
     }
 

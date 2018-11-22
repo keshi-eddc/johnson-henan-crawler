@@ -59,7 +59,7 @@ public class CrawlerServiceImpl implements CrawlerService {
 
 
     @Override
-    public void extraOnePageContent(String content, String account) {
+    public void extraOnePageContent(String content, String account, String isInsert) {
         logger.info("- 解析页面");
         //检查页面是否为空
         if (StringUtils.isNotEmpty(content)) {
@@ -230,7 +230,12 @@ public class CrawlerServiceImpl implements CrawlerService {
                                     johnson_henan_relationDistribution_list.setInsertTime(new Timestamp(Calendar.getInstance().getTime().getTime()));
                                     johnson_henan_relationDistribution_list.setUpdateTime(new Timestamp(Calendar.getInstance().getTime().getTime()));
 
-                                    johnson_henan_relationDistribution_service.addJohnson_henan_RelationDistribution_list(johnson_henan_relationDistribution_list);
+                                    if (isInsert.equals("yes")) {
+                                        johnson_henan_relationDistribution_service.addJohnson_henan_RelationDistribution_list(johnson_henan_relationDistribution_list);
+                                        logger.info("- 插入数据库,第：" + i + " 条：" + johnson_henan_relationDistribution_list.toString());
+                                    } else {
+                                        logger.info("- 测试 ,不插入数据库,第：" + i + " 条：" + johnson_henan_relationDistribution_list.toString());
+                                    }
                                 } catch (Exception e) {
                                     logger.error("入库异常");
                                     e.printStackTrace();

@@ -212,4 +212,32 @@ public class Johnson_henan_RelationDistribution_list {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
+
+    @Override
+    public String toString() {
+        String show = "[" +
+                " 项目名称:" + projectName +
+                " ,产品代码:" + productCode +
+                " ,大类:" + category +
+                " ,一级分类:" + categoryOne +
+                " ,二级分类:" + categoryTwo +
+                " ,目录名称:" + directoryName +
+                " ,注册证产品名称:" + registrationCertificateProductName +
+                " ,品牌:" + brand +
+                " ,规格:" + specifications +
+                " ,型号:" + productModel +
+                " ,单位:" + unit +
+                " ,生产企业:" + productionEnterprise +
+                " ,备注:" + remarks +
+                " ,采购限价:" + purchasePriceLimit +
+                " ,中标人(及其委托的代理人):" + bidWinner +
+                " ,确认状态:" + confirmStatus +
+                " ,中标人维护其委托的代理人:" + agent +
+                " ,未发生交易:" + noDeal +
+                " ,账号:" + account +
+                " ,数据入库时间:" + insertTime +
+                " ,数据更新时间:" + updateTime +
+                " ]";
+        return show;
+    }
 }

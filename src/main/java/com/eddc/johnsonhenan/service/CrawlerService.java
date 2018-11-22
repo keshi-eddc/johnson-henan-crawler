@@ -7,6 +7,6 @@ public interface CrawlerService {
     public String getPostContent(String url, Map<String, String> headParms);
 
     //2.解析页面,数据入库
-    public void extraOnePageContent(String content, String account);
+    public void extraOnePageContent(String content, String account ,String isInsert);
 
 }
