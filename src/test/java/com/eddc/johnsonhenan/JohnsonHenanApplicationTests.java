@@ -87,7 +87,7 @@ public class JohnsonHenanApplicationTests {
 
     }
 
-    /*
+    /* 抓取时间，每月前5号
      * 抓取账号前，登录网页，获得cookie
      * 注意cookie里，显示每页数量的参数，确保数据完整
      * 9 = 每页显示数量 2018年11月19日
@@ -96,7 +96,7 @@ public class JohnsonHenanApplicationTests {
     @Test
     public void getDataWithAccount() {
         String account = "hs0014";
-        String NET_SessionId = "qp41ppjawcrt4455lrdcca45";
+        String NET_SessionId = "fhymbrviotgqn0uc5wfkn3ex";
 
         //yes 才插入数据库
         String isInsert = "no";
